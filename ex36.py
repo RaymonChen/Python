@@ -5,14 +5,16 @@ key = ["No"]
 def start():
     print "You are in a dark room. \nThere are two doors."
     print "There is a word on the door1, which says, \"Alive\"."
-    print "Door2 has \"dead\" on it. \nWhich one do you take?"
+    print "Door2 has \"dead\" on it. \nWhich one do you take?\nType M for a Map."
     
-    choice = raw_input("Please choose 1 or 2 \n> ")
+    choice = raw_input()
     
     if choice == "1":
         alive_room()
     elif choice == "2":
         dead_room()
+    elif choice == "M" or choice == "m" :
+        helpme()
     else:
         dead("You can't choose the room until you starve.")
 
@@ -83,5 +85,36 @@ def treasure_room():
             print "I have no idea what that means. Please try again."
     
 
-
+def helpme():
+	print """
+-----------------------------------------------------------------
+|                  |                                            |     
+|                  |                  Chest                     |                             
+|                  |                                            |     
+|                  |                                            |             
+|                  |                                            | 
+|                  |               Treasure Room                |           
+|                  |------------------______---------------------
+|    Code Case     |                                            |
+|                  |                                            |
+|                  |                                            |
+|                  |               Choice Room                  |
+|                  |------------------______--------------------|
+|                  |                    |                       |
+|                  |                    |                       |
+|                  |                    |                       |
+|   Alive Room     |           Pool     |   Road                |
+|                  |                    |                       |
+|                  |                    |                       |
+|                  |                Dead ROOM                   |
+------------______---______--------------------------------------
+|           Alive    Dead                                       |
+|                                                               |                
+|                          Dark Room                            |
+-----------------------------------------------------------------
+                 
+		  """
+    	start()	
+        
+        
 start()
